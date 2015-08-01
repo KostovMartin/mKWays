@@ -20,7 +20,7 @@ namespace MkWays
                 "~/Scripts/jquery.gmap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
+                "~/Content/bootstrap.min.css",
                 "~/Content/icons.css",
                 "~/Content/icons-color.css",
                 "~/Content/social-icons.css",
