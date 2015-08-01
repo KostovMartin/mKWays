@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mkWays", "mkWays\mkWays.csproj", "{59AC5FDF-A5B0-4305-A97F-F0EF3B314492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MkAjax.Demo", "MkAjax.Demo\MkAjax.Demo.csproj", "{A813AF76-4ECE-4EAD-973F-518DECA6DABA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs30
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = mkWays\\mkWays.csproj
+		SccProjectName1 = mkWays
+		SccLocalPath1 = mkWays
+		SccProjectUniqueName2 = MkAjax.Demo\\MkAjax.Demo.csproj
+		SccProjectName2 = MkAjax.Demo
+		SccLocalPath2 = MkAjax.Demo
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59AC5FDF-A5B0-4305-A97F-F0EF3B314492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59AC5FDF-A5B0-4305-A97F-F0EF3B314492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59AC5FDF-A5B0-4305-A97F-F0EF3B314492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59AC5FDF-A5B0-4305-A97F-F0EF3B314492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A813AF76-4ECE-4EAD-973F-518DECA6DABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A813AF76-4ECE-4EAD-973F-518DECA6DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A813AF76-4ECE-4EAD-973F-518DECA6DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A813AF76-4ECE-4EAD-973F-518DECA6DABA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

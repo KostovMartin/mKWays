@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = ViewBag.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/csharp.css" rel="stylesheet" />
+<div id="page-title">
+    <div id="page-title-inner">
+        <div class="container">
+            <h2>@ViewBag.Name</h2>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div class="container">
+        <div class="col-sm-9 col-md-9">
+            @RenderBody()
+        </div>
+        <div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1">
+            <div class="row">
+                <ul class="nav nav-green nav-pills nav-stacked">
+                    <li class="@(ViewBag.Name == "Ajax" ? "active" : "")">@Html.ActionLink("Examples", "Ajax", "Home")</li>
+                    <li class="@(ViewBag.Name == "Documentation" ? "active" : "")">@Html.ActionLink("Documentation", "Documentation", "Home")</li>
+                    <li class="@(ViewBag.Name == "Changelog" ? "active" : "")">@Html.ActionLink("Changelog", "Changelog", "Home")</li>
+                    <li class="@(ViewBag.Name == "Download" ? "active" : "")">@Html.ActionLink("Download", "Download", "Home")</li>
+                    <li><a href="/Demo.html" target="_blank">Demo</a></li>
+                </ul>
+            </div>
+        </div>         
+    </div>
+</div>

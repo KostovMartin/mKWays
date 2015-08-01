@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Documentation";
+    Layout = "~/Views/Shared/_AjaxLayout.cshtml";
+}
+
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt>AjaxHandler</dt>
+        <dd>
+            The base class for the webapi.
+            <br />This handler will generate the necessary JavaScript. Every class which is marked with <b>AjaxClassAttribute</b> will be included in the output JavaScript. In the marked classes only methods which are marked with the <b>AjaxMethodAttribute</b> are going to be included.
+            <br />The AjaxHandler is <b>IHttpHandler</b>, so it is important not to overload <b>ProcessRequest</b> and <b>IsReusable</b> in the child classes, which are used as webapi.
+        </dd>
+        
+        <dt>AjaxClassAttribute</dt>
+        <dd>
+            The class marked with this attribute will be included in the generated JavaScript output. Parameters:
+            <br /><b>1. Name</b> – <u>Optional</u>. Specifies different name for the client JavaScript function.
+            <br />By default the output client JavaScript name is the same as the server name.
+        </dd>
+        
+        <dt>AjaxMethodAttribute</dt>
+        <dd>
+            The method marked with this attribute will be included in the generated JavaScript output, but only if the class is also included. Parameters:
+            <br /><b>1. Name</b> – <u>Optional</u>. Specifies different name for the client JavaScript function.
+            <br />By default the output client JavaScript name is the same as the server name, <b>but the first letter is lower case</b>.
+            
+            <br /><b>2. RequestType</b> – <u>Optional</u>. Specifies the Http data transfer method which is going to be used. 
+            <br />By default it is <b>RequestType.Post</b>.
+            
+            <br /><b>3. ExecutionType</b> – <u>Optional</u>. Specifies the execution type used by the client which is going to be used.
+            <br />By default it is <b>ExecutionType.Async</b>.
+            
+            <br /><b>4. UseJavaScriptNamingConvention</b> – <u>Optional</u>. Specifies the convention used when the JavaScript function is generated.
+            <br />By default client side name starts with lower case.
+        </dd>
+        
+        <dt>JsonModelAttribute</dt>
+        <dd>
+            When used as parameter in <b>AjaxMethod</b>, the class marked with this attribute will be set from the data passed by the client as Json. 
+            Only the public Properties and Fields are going to be set. If Newtonsoft.Json is injected it is possible to use its attribute configuration in order to customize the model. 
+        </dd>
+        
+        <dt>Supported parameter types</dt>
+        <dd>
+            The only types that can be used as parameters to the methods marked with the AjaxMethodAttribute. 
+            <br />Optional parameters are not allowed.
+            <br /><b>Types:</b>
+            <ul class="list-unstyled">
+                <li>bool / bool[] / IList&lt;bool&gt;</li>
+                <li>DateTime / DateTime[] / IList&lt;DateTime&gt;</li>
+                <li>double / double[] / IList&lt;double&gt;</li>
+                <li>float / float[] / IList&lt;float&gt;</li>
+                <li>int / int[] / IList&lt;int&gt;</li>
+                <li>long / long[] / IList&lt;long&gt;</li>
+                <li>short / short[] / IList&lt;short&gt;</li>
+                <li>string / string[] / IList&lt;string&gt;</li>
+                <li>User defined classes marked with the JsonModelAttribute.</li>
+            </ul>
+        </dd>
+        
+        <dt>Supported result types</dt>
+        <dd>
+            The result send to the client is always string.
+            <br /><b>Types:</b>
+            <ul class="list-unstyled">
+                <li>void</li>
+                <li>string</li>
+                <li>For every other type the injected class that implements IMkJson's Serialize method.</li>
+            </ul>
+        </dd>
+    </dl>
+</div>

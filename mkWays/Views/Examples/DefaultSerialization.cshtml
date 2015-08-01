@@ -1,0 +1,34 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">Default Serialization <span class="right">From <a href="/Changelog#version-1.2"><kbd>v1.2</kbd></a></span></div>
+    <div class="panel-body">
+        <div class="col-sm-6 col-md-6">
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>C#</kbd> Code:
+<pre class="csharpcode">
+[<span class="cls">AjaxMethod</span>]
+<span class="kwrd">public</span> <span class="kwrd">static</span> <span class="cls">MainObject</span> DefaultSerialization()
+{
+    <span class="kwrd">return</span> <span class="kwrd">new</span> <span class="cls">MainObject</span>
+    {
+        Id = 100,
+        Name = <span class="str">"My Name"</span>,
+        Data = <span class="kwrd">new</span> <span class="cls">OtherObject</span> 
+        {
+            Description = <span class="str">"Very long description."</span>
+        }
+    };
+}</pre>
+        </div>
+        <div class="col-sm-6 col-md-6">          
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>JS</kbd> Usage:
+<pre class="csharpcode">
+WebMethods.defaultSerialization(
+    <span class="kwrd">function</span>(isSuccess, result) {
+            <span class="kwrd">if</span> (isSuccess) {
+            <span class="kwrd">var</span> data = JSON.parse(result);
+            <span class="rem">// Use the data here</span>
+        }
+    }
+);</pre>
+        </div>
+    </div>
+</div>

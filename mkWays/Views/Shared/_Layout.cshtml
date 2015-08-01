@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>mkWays</title>
+        <meta name="description" content="mkWays">
+        <meta name="keywords" content="">
+        <meta name="author" content="Martin Kostov from mkWays">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        @Styles.Render("~/Content/css")
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+        <!-- end: CSS -->
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        @Html.Partial("NavigatorHeader")
+        @RenderBody()
+        @Html.Partial("Footer")
+        @Scripts.Render("~/bundles/js")
+        <script src="~/webapi/WebMethods.ashx"></script>
+        @RenderSection("scripts", false)
+    </body>
+</html>

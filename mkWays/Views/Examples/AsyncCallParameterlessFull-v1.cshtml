@@ -1,0 +1,34 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">Async Call - Parameterless - FULL Example <span class="right">From <a href="/Changelog#version-1.1"><kbd>v1.1</kbd></a></span></div>
+    <div class="panel-body">
+        <div class="col-sm-6 col-md-6">
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>C#</kbd> Code:
+<pre class="csharpcode">
+[<span class="cls">AjaxClass</span>]
+<span class="kwrd">public</span> <span class="kwrd">class</span> <span class="cls">WebMethods</span> : <span class="cls">AjaxHandler</span>
+{
+    [<span class="cls">AjaxMethod</span>]
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">string</span> GetMessage()
+    {
+        <span class="kwrd">return</span> <span class="str">"Hello world."</span>;
+    }
+}</pre>
+        </div>
+        <div class="col-sm-6 col-md-6">          
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>JS</kbd> Usage:
+            <pre class="csharpcode">
+<span class="rem">// Scripts to include</span>
+&#60;<span class="kwrd">script</span> src="<span class="str">Scripts/MkAjax.min.js</span>"&#62;&#60;<span class="kwrd">script</span>&#62;
+&#60;<span class="kwrd">script</span> src="<span class="str">webapi/WebMethods.ashx</span>"&#62;&#60;<span class="kwrd">script</span>&#62;
+<span class="rem">//...</span>
+WebMethods.getMessage(
+    <span class="kwrd">function</span>(isSuccess, result) {
+        <span class="kwrd">if</span> (isSuccess) {
+            <span class="rem">// Use the result here</span>
+        }
+    }
+);
+</pre>
+        </div>
+    </div>
+</div>

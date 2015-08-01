@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>MkAjaxDemo</title>
+
+        <script src="Scripts/MkAjax.min.js"></script>
+        <script src="webapi/WebMethods.ashx"></script>
+        
+        <script src="Scripts/Examples.js"></script>
+    </head>
+    <body>
+        <button onclick=" Examples.asyncPost() ">Async Post</button>
+        <br /><br />
+
+        <button onclick=" Examples.asyncGet() ">Async Get</button>
+        <br /><br />
+
+        First name: <input id="example3-FirstName" type="text" name="FirstName" value="Mickey"><br />
+        Last name: <input id="example3-LastName" type="text" name="LastName" value="Mouse"><br />
+        <button onclick=" Examples.asyncPostWithParams() ">Async Post with Parameters</button>
+        <br /><br />
+
+        First name: <input id="example4-FirstName" type="text" name="FirstName" value="Mickey"><br />
+        Last name: <input id="example4-LastName" type="text" name="LastName" value="Mouse"><br />
+        <button onclick=" Examples.asyncGetWithParams() ">Async Get with Parameters</button>
+        <br /><br />
+
+        <button onclick=" Examples.blocking() ">Blocking</button>
+        <br /><br />
+
+        <button onclick=" Examples.getObject() ">Get Object Data</button>
+        <br /><br />
+
+        <button onclick=" Examples.getObjectDefaultSerialization() ">Get Object Data with Default Serialization</button>
+        <br /><br />
+
+        <button onclick=" Examples.sendModelAsParameter() ">Send Model Class As Parameter</button>
+    </body>
+</html>

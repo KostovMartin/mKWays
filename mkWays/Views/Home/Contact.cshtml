@@ -1,0 +1,93 @@
+﻿@model mkWays.Models.MailModel
+@{
+    ViewBag.Title = "Contact";
+}
+<div>
+    <div id="googlemaps-container-top"></div>
+    <div id="googlemaps" class="google-map google-map-full"></div>
+    <div id="googlemaps-container-bottom"></div>
+</div>
+
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-sm-3 col-md-3">
+                <div class="title"><h3>Contact Info</h3></div>
+                <p>
+                    <b>mkWays</b>
+                </p>
+                <p>
+                    Sofia, Bulgaria
+                </p>
+                <p>
+                    <b>Phone:</b> (+359) 89 443 77 00
+                </p>
+                <p>
+                    <b>Email:</b> m.kostov [аt] mkways.com
+                </p>
+                <p>
+                    <b>Web:</b> mkways.com
+                </p>
+            </div>
+
+            <div class="col-sm-4 col-md-4">
+                <div class="title"><h3>Contact Form</h3></div>
+                <div id="contact-form">
+                    @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
+                    {
+                        @Html.ValidationSummary()
+                        <fieldset>
+                            <div class="clearfix">
+                                <label for="name"><span>Name:</span></label>
+                                @Html.TextBoxFor(m => m.Name, new { @type = "text", @class = "form-control", @id="name", @tabindex="1" })
+                            </div>
+                            <div class="clearfix">
+                                <label for="email"><span>Email:</span></label>
+                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @id = "email", @tabindex = "2" })
+                            </div>
+                            <div class="clearfix">
+                                <label for="message"><span>Message:</span></label>
+                                @Html.TextAreaFor(m => m.Message, new { @class = "form-control input-xlarge", @id = "message", @tabindex = "3", @rows = "7" })
+                            </div>
+                            <div class="actions">
+                                <button tabindex="4" type="submit" class="btn btn-primary">Send</button>
+                                <button type="reset" class="btn btn-default">Reset</button>
+                            </div>
+                        </fieldset>
+                    }
+                </div>
+            </div>
+
+            <div class="col-sm-5 col-md-5">
+                <div class="title"><h3>Follow US!</h3></div>
+                <ul class="social-bookmarks">
+                    <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/kostovmartin">linkedin</a></li>
+                    <li class="facebook"><a target="_blank" href="https://www.facebook.com/KostovMartin">facebook</a></li>
+                    <li class="twitter"><a target="_blank" href="https://twitter.com/KostovMartin">twitter</a></li>
+                    <li class="skype"><a href="skype:mar70o?call">skype</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts 
+{
+    @Scripts.Render("~/bundles/googleMaps")
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript">
+        $('#googlemaps').gMap({
+            maptype: 'ROADMAP',
+            scrollwheel: false,
+            zoom: 14,
+            markers: [
+                {
+                    address: 'FMI Sofia, Sofia',
+                    html: '',
+                    popup: false,
+                }
+            ],
+        });
+    </script>
+}

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Documentation";
+    Layout = "~/Views/Shared/_AjaxLayout.cshtml";
+}
+
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt id="version-1.1">1.1</dt>
+        <dd>
+            - First public version;<br />
+            - Basic AjaxHandler implementation;<br />
+            - Supports only few types to be used as parameters;<br />
+            - Only string could be send to the client;<br />
+            - Supports only .NET Framework 3.5+;<br />
+            - Have dependency on Newtonsoft.Json.<br />
+        </dd>
+        <dt id="version-1.1.1">1.1.1</dt>
+        <dd>
+            - Fixed minor bugs.<br />
+            <br />
+        </dd>
+        
+        <dt id="version-1.2">1.2</dt>
+        <dd>
+            - Fixed bug with AjaxMethodAttribute optional names generation;<br />
+            - Added serialization when returning something but string in AjaxMethod. Newtonsoft.Json is used.<br />
+            <br />
+        </dd>
+        
+        <dt id="version-1.3">1.3</dt>
+        <dd>
+            - Added support for model class as parameter via JsonModelAttribute.<br />
+            <br />
+        </dd>
+        
+        <dt id="version-2.0">2.0</dt>
+        <dd>
+            - <b>Not fully backward compatible;</b><br />
+            - Added support for .NET Framework 2.0 & 3.0;<br />
+            - Removed dependency: System.Core;<br />
+            - Removed dependency: Newtonsoft.Json;<br />
+            - From now on JObject and JArray are not supported as parameters or results, both can be replaced by Model class;<br />
+            - From now on the serialization and deserialization to JSON are injected via IMkJson interface;<br />
+            - Added support for IList&lt;T&gt; as parameter type.<br />
+            <br />
+        </dd>
+       
+    </dl>
+</div>

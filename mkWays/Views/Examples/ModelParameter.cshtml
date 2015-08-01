@@ -1,0 +1,48 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">Pass Model as Parameter <span class="right">From <a href="/Changelog#version-1.3"><kbd>v1.3</kbd></a></span></div>
+    <div class="panel-body">
+        <div class="col-sm-6 col-md-6">
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>C#</kbd> Code:
+<pre class="csharpcode">
+<span class="rem">//The model</span>
+[<span class="cls">JsonModel</span>]
+<span class="kwrd">public class</span> MyTestModel
+{
+    <span class="kwrd">public int</span> ID { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public string</span> Name { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="cls">List</span>&#60<span class="kwrd">int</span>&#62; Items { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">private string</span> Description { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    [<span class="cls">JsonIgnore</span>]
+    <span class="kwrd">public string</span> AddDescription { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+}
+
+<span class="rem">//Usage of the model</span>
+[<span class="cls">AjaxMethod</span>]
+<span class="kwrd">public</span> <span class="kwrd">static</span> <span class="cls">MyTestModel</span> SendModelAsParameter(
+    <span class="cls">MyTestModel</span> model)
+{
+    <span class="rem">// use the model here</span>
+    <span class="kwrd">return</span> model;
+}
+</pre>
+        </div>
+        <div class="col-sm-6 col-md-6">          
+            <span class="glyphicon glyphicon-arrow-right"></span> <kbd>JS</kbd> Usage:
+<pre class="csharpcode">
+WebMethods.sendModelAsParameter(
+    {
+        ID: 1,
+        Name: <span class="str">"MyModelName2112"</span>,
+        Items: [1, 2, 3, 12],
+        Description: <span class="str">"Will miss in the model."</span>,
+        AddDescription: <span class="str">"Will miss too."</span> 
+    },
+    <span class="kwrd">function</span>(isSuccess, result) {
+            <span class="kwrd">if</span> (isSuccess) {
+            <span class="rem">// Use the result here</span>
+        }
+    }
+);</pre>
+        </div>
+    </div>
+</div>
