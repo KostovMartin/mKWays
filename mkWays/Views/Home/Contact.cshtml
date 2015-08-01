@@ -1,5 +1,4 @@
-﻿@model mkWays.Models.MailModel
-@{
+﻿@{
     ViewBag.Title = "Contact";
 }
 <div>
@@ -32,31 +31,6 @@
             </div>
 
             <div class="col-sm-4 col-md-4">
-                <div class="title"><h3>Contact Form</h3></div>
-                <div id="contact-form">
-                    @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
-                    {
-                        @Html.ValidationSummary()
-                        <fieldset>
-                            <div class="clearfix">
-                                <label for="name"><span>Name:</span></label>
-                                @Html.TextBoxFor(m => m.Name, new { @type = "text", @class = "form-control", @id="name", @tabindex="1" })
-                            </div>
-                            <div class="clearfix">
-                                <label for="email"><span>Email:</span></label>
-                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @id = "email", @tabindex = "2" })
-                            </div>
-                            <div class="clearfix">
-                                <label for="message"><span>Message:</span></label>
-                                @Html.TextAreaFor(m => m.Message, new { @class = "form-control input-xlarge", @id = "message", @tabindex = "3", @rows = "7" })
-                            </div>
-                            <div class="actions">
-                                <button tabindex="4" type="submit" class="btn btn-primary">Send</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
-                            </div>
-                        </fieldset>
-                    }
-                </div>
             </div>
 
             <div class="col-sm-5 col-md-5">

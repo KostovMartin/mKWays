@@ -125,8 +125,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mail.cs" />
-    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\MyTestModel.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

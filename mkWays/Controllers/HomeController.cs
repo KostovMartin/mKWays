@@ -1,7 +1,4 @@
-﻿using System.Threading;
-using System.Web.Mvc;
-using mkWays;
-using mkWays.Models;
+﻿using System.Web.Mvc;
 
 namespace MkWays.Controllers
 {
@@ -43,16 +40,6 @@ namespace MkWays.Controllers
 
         public ActionResult Contact()
         {
-            return this.View();
-        }
-
-        [HttpPost]
-        public ActionResult Contact(MailModel e)
-        {
-            if (this.ModelState.IsValid)
-            {
-                (new Thread(() => Mail.SendEmail(e)) {IsBackground = true}).Start();
-            }
             return this.View();
         }
     }
